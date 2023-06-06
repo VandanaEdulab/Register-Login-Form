@@ -1,0 +1,127 @@
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+      <div class="row justify-content-center align-items-center h-100">
+        <div class="col-12 col-lg-9 col-xl-7">
+          <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+            <div class="card-body p-4 p-md-5">
+              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Registration Form</h3>
+              <form [formGroup]="Registerform" (ngSubmit)="Register()" >
+  
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+  
+                    <div class="form-outline">
+                      <input type="text" id="firstName" class="form-control form-control-lg" formControlName="fname" name="fname"/>
+                      <label class="form-label" for="firstName">First Name</label>
+                      <span style="color:red" *ngIf="Fname.errors?.required&&Fname.touched">First Name is Required</span>
+                      <span style="color:red" *ngIf="Fname.errors?.minlength">First Name is To Short</span>
+                    </div>
+  
+                  </div>
+                  <div class="col-md-6 mb-4">
+  
+                    <div class="form-outline">
+                      <input type="text" id="lastName" class="form-control form-control-lg" formControlName="lname" name="lname"/>
+                      <label class="form-label" for="lastName">Last Name</label>
+                      <span style="color:red" *ngIf="Lname.errors?.required&&Lname.touched">Last Name is Required</span>
+                      <span style="color:red" *ngIf="Lname.errors?.minlength">First Name is To Short</span>
+                    </div>
+  
+                  </div>
+                </div>
+  
+                <div class="row">
+                  <div class="col-md-6 mb-4 d-flex align-items-center">
+  
+                    <div class="form-outline datepicker w-100">
+                      <input type="text" class="form-control form-control-lg" id="birthdayDate" formControlName="email" name="email">
+                      <label for="Email" class="form-label">Email ID</label>
+                        <span style="color:red" *ngIf="Email.invalid&&Email.touched">Email is Required</span>
+                        <span style="color:red" *ngIf="Email.errors?.email">Enter Valid Email Address</span>
+                    </div>
+  
+                  </div>
+                  <div class="col-md-6 mb-4">
+  
+                    <h6 class="mb-2 pb-1">Gender: </h6>
+  
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio"  id="femaleGender"
+                        value="Female"  formControlName="gender" />
+                      <label class="form-check-label" for="femaleGender">Female</label>
+                    </div>
+  
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio"  id="maleGender"
+                        value="Male" formControlName="gender" />
+                      <label class="form-check-label" for="maleGender">Male</label>
+                    </div>
+  
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio"  id="otherGender"
+                        value="Others" formControlName="gender" />
+                      <label class="form-check-label" for="otherGender">Other</label>
+                    </div>
+                   
+                </div>
+  
+
+                <div class="form-text text-danger" *ngIf="Gender.errors?.required">
+                  </div>
+              </div>
+                <div class="row">
+                  <div class="col-md-6 mb-4 pb-2">
+  
+                    <div class="form-outline">
+                      <input type="email" id="emailAddress" class="form-control form-control-lg" formControlName="pass" name="pass"/>
+                      <label class="form-label" for="pass">Password</label>
+                      <span style="color:red" *ngIf="Pass.errors?.minlength">  Your Password must be at least 6 characters long.</span>
+                      <span style="color:red" *ngIf="Pass.errors?.maxlength">Your Password cannot exceed 10 characters.</span>
+                      <span style="color:red" *ngIf="Pass.errors?.required&&Pass.touched">Password is Required</span>
+                    </div>
+  
+                  </div>
+                  <div class="col-md-6 mb-4 pb-2">
+  
+                    <div class="form-outline">
+                      <input type="tel" id="phoneNumber" class="form-control form-control-lg"  formControlName="cpass" name="cpass"/>
+                      <label class="form-label" for="phoneNumber">Confirm Password</label>
+>
+                      <span style="color:red" *ngIf="Cpass.errors?.required&&Cpass.touched">Confirm Password</span><br>
+                    <span style="color:red" *ngIf="Registerform.errors?.PasswordmismatchError">Password Doesn't Match</span>
+                    </div>
+                 
+  
+                  </div>
+                </div>
+  
+                <!-- <div class="row">
+                  <div class="col-12">
+  
+                    <select class="select form-control-lg">
+                      <option value="1" disabled>Choose option</option>
+                      <option value="2">Subject 1</option>
+                      <option value="3">Subject 2</option>
+                      <option value="4">Subject 3</option>
+                    </select>
+                    <label class="form-label select-label">Choose option</label>
+  
+                  </div>
+                </div> -->
+  
+                <div class="mt-4 pt-2 text-center">
+                  <input class="btn btn-primary btn-block mb-4" type="submit" value="Submit()" />
+                </div>
+                <div class="text-center">
+                 <p>Go To Login <a routerLink="/login">Login</a></p> 
+                </div>
+              
+  
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
